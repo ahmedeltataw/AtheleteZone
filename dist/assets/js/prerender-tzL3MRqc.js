@@ -391,19 +391,19 @@ const BeforeLogin = [
   },
   {
     title: "About us",
-    path: "/About"
+    path: "/About.html"
   },
   {
     title: "blog",
-    path: "/blog"
+    path: "/blog.html"
   },
   {
     title: "workout",
-    path: "/workout"
+    path: "/workout.html"
   },
   {
     title: "contact us",
-    path: "/contact"
+    path: "/contact.html"
   }
 ];
 const CardData = [
@@ -565,7 +565,7 @@ const $$Header = createComponent(async ($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<header> <div class="container"> <nav class="d-flex align-items-center py-6 justify-space-between"> <a href="/" class="logo"> ${renderComponent($$result, "Image", $$Image, { "src": Logo, "alt": `logo for AtheleteZone`, "format": "webp", "quality": 70, "class": `img-cover` })} </a> ${renderComponent($$result, "Button", $$Button, { "type": "button", "airaLabel": "menu", "airaExpanded": "false", "airaControls": "mobileResponsive", "ClassName": "btn icon-nav-base" }, { "default": ($$result2) => renderTemplate` <span></span><span></span><span></span> ` })} <ul class="navMenu beforeLogin d-flex align-items-center lg-max-d-none"> ${BeforeLogin.map((link) => renderTemplate`<li class="nav-link pl-10 "> <a${addAttribute(link.path, "href")} class="fs-16 capitalize fw-600 relative"> ${" "} ${link.title}${" "} </a> </li>`)} </ul> ${renderComponent($$result, "Responsive", $$Responsive, {})} </nav> </div> </header> `;
 }, "D:/project/version/2/Astro/AtheleteZone/src/components/header.astro", void 0);
 
-const icons = {"local":{"prefix":"local","lastModified":1707207084,"icons":{"arrow-right":{"body":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path stroke-dasharray=\"20\" stroke-dashoffset=\"20\" d=\"M3 12h17.5\"><animate fill=\"freeze\" attributeName=\"stroke-dashoffset\" dur=\"0.3s\" values=\"20;0\"/></path><path stroke-dasharray=\"12\" stroke-dashoffset=\"12\" d=\"m21 12-7 7m7-7-7-7\"><animate fill=\"freeze\" attributeName=\"stroke-dashoffset\" begin=\"0.3s\" dur=\"0.2s\" values=\"12;0\"/></path></g>","width":24,"height":24}}}};
+const icons = {"local":{"prefix":"local","lastModified":1707209661,"icons":{"arrow-right":{"body":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path stroke-dasharray=\"20\" stroke-dashoffset=\"20\" d=\"M3 12h17.5\"><animate fill=\"freeze\" attributeName=\"stroke-dashoffset\" dur=\"0.3s\" values=\"20;0\"/></path><path stroke-dasharray=\"12\" stroke-dashoffset=\"12\" d=\"m21 12-7 7m7-7-7-7\"><animate fill=\"freeze\" attributeName=\"stroke-dashoffset\" begin=\"0.3s\" dur=\"0.2s\" values=\"12;0\"/></path></g>","width":24,"height":24}}}};
 
 const cache = /* @__PURE__ */ new WeakMap();
 
@@ -673,10 +673,10 @@ const $$Hero = createComponent(async ($$result, $$props, $$slots) => {
 Reach your goals
 <br> <small class="fw-400 capitalize fs-r-48 ">with</small> <span class="fw-700 "> AtheleteZone</span> </h1> <p class="fs-20 line-normal pb-7">
 Start setting your goal in a healthy way with our easy-to-use apps, tools, and online support.
-</p> <div class="buttonLogin pt-7"> ${renderComponent($$result, "Button", $$Button, { "type": "button", "airaLabel": "go to sign up page", "ClassName": "btn btn-skew round-6 mb-5" }, { "default": ($$result2) => renderTemplate` <a href="/signUp" class="px-9 py-7 fs-18 capitalize">
+</p> <div class="buttonLogin pt-7"> ${renderComponent($$result, "Button", $$Button, { "type": "button", "airaLabel": "go to sign up page", "ClassName": "btn btn-skew round-6 mb-5" }, { "default": ($$result2) => renderTemplate` <a href="/signUp.html" class="px-9 py-7 fs-18 capitalize">
 Get Started
 </a> ` })} <small class="d-block">Already a member ?
-<a href="/signIn" class="pl-1 fw-600">Sign in</a> </small> </div> </div> </div> </section>`;
+<a href="/signIn.html" class="pl-1 fw-600">Sign in</a> </small> </div> </div> </div> </section>`;
 }, "D:/project/version/2/Astro/AtheleteZone/src/components/hero.astro", void 0);
 
 const $$Astro$f = createAstro();
