@@ -1,0 +1,34 @@
+---
+interface Props {
+  id?: string;
+  place?: string;
+  type?: any;
+  title?: string;
+  MassageClass?: string;
+  parentClass?: string;
+}
+const { id, place, type, title, MassageClass, parentClass } = Astro.props;
+---
+
+<div  class:list={`form-group relative ${parentClass }`}>
+  <slot />
+  {
+    id && (
+      <div class="relative">
+        <input
+          class="px-5 round-6"
+          type={type}
+          id={id}
+          placeholder={place}
+          name={id}
+        />
+        {title && (
+          <label for={id} class="top-50 left-5">
+            {title}
+          </label>
+        )}
+      </div>
+    )
+  }
+  {id && <p class={`errorMessage pl-2 pt-4 fs-14 ${MassageClass} `} />}
+</div>

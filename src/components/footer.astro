@@ -1,0 +1,49 @@
+---
+import "../styles/components/footer.scss"
+import Button from "./ui/Button.astro"
+import { Icon } from 'astro-icon/components'
+---
+<footer>
+    <div class="container d-flex align-items-start justify-space-between">
+        <div class="footer-ul about-us">
+            <p class="title fs-24 fw-700 capitalize">about us</p>
+            <p class="dec line-relaxed">
+                People who track food achieve more than
+                 double the average weight loss and 
+                 members lose weight 3x faster when 
+                 doing it with friends. AtheleteZone combines these to create 
+                the most powerful solution for healthy, sustainable weight loss
+            </p>
+        </div>
+        <!--  -->
+        <div class="footer-ul contact-us ">
+            <p class="title fs-24 fw-700 capitalize">contact us</p>
+            <p class="dec line-relaxed">
+                The perfect web application for keeping track of your food,
+                exercise and weight while on-the-go
+            </p>
+        </div>
+        <!--  -->
+        <div class="footer-ul news">
+            <p class="title fs-24 fw-700 capitalize"
+            >
+                newsletter
+            </p>
+            <p class="dec line-relaxed">
+                you can trust us we only send offers , not a single spam
+            </p>
+            <form action="/">
+                <div class="from-group relative">
+                    <input type="email" placeholder="Email address" class="round-12">
+                    <Button 
+                    type="submit" 
+                    airaLabel="send email"  
+                    ClassName="btn btn-skew sendEmails round-12 px-9  top-0 right--2"
+                    >
+                    <Icon name="arrow-right"/>
+                </Button>
+                </div>
+            </form>
+        </div>
+    </div>
+</footer>

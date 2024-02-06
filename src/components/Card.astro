@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+
+interface Card {
+  title: string;
+  body: string;
+  href: string;
+  src: any;
+  alt: string;
+  aria: string;
+  q: number;
+  delay?:string,
+  duration?:string,
+}
+const { href, title, body, src, alt, q, aria,delay } = Astro.props;
+import Button from "./ui/Button.astro";
+---
+
+<div
+  class="card round-8 AE_Scrolling  fade-in "
+  data-Scrolling-duration="500"
+  data-Scrolling-delay={delay}
+>
+  <div class="imgCard round-8 mb-5 relative">
+    <Image src={src} alt={alt} format="webp" quality={q} class="round-8" width={400} height={267} />
+  </div>
+  <h3 class="fs-24 fw-700 line-normal capitalize pl-6">
+    {title}
+  </h3>
+  <p class="fs-16 pl-6 pb-5 line-normal">
+    {body}
+  </p>
+  <Button
+    type="button"
+    airaLabel="read more"
+    ClassName="btn btn-skew ml-6 mb-5 round-6"
+  >
+    <a href={href} aria-label={aria} class="fs-16 fw-400 capitalize px-5 py-4">
+      read more
+    </a>
+  </Button>
+</div>

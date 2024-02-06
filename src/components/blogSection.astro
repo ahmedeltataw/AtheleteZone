@@ -1,0 +1,33 @@
+---
+import type {CardType} from "../data/data";
+import Card from "../components/Card.astro" 
+import MainHeading from "./ui/MainHeading.astro";
+interface Props{
+    title:string,
+    data:any[]
+}
+const {title,data} = Astro.props
+---
+<section class="recommend overflow-hidden ">
+    
+    <MainHeading title={title} />
+    <div class="container">
+        <div class="d-grid grid-system">
+            {
+                data.map((item:CardType)=>(
+                    <Card
+                         href={item.href}
+                         title={item.title}
+                         body={item.body}
+                         src={item.src}
+                         alt={item.alt}
+                         aria={item.aria}
+                         q={item.q}
+                         delay={item.delay}
+                         
+                     />
+                ))
+            }
+        </div>
+    </div>
+</section>

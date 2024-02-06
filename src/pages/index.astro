@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+// import { Icon } from 'astro-icon/components'
+//my components
+import Hero from '../components/hero.astro';
+import BlogSection from '../components/blogSection.astro';
+import "../styles/pages/landing.scss"
+// my library  animation
+import "../styles/plugins/AEScrolling.scss"
+//data
+import {CardData} from "../data/data";
+---
+
+<Layout title="AtheleteZone">
+	<Hero/>
+	<BlogSection data={CardData} title='Recommend' />
+	<script src="../scripts/scrollingAnimation.ts"></script>
+</Layout>
+
+

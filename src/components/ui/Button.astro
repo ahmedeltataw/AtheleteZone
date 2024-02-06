@@ -1,0 +1,32 @@
+---
+interface Props {
+  type: "button" | "submit" | "reset" | null | undefined;
+  airaLabel: string;
+  airaExpanded?: any;
+  airaControls?: string;
+  ClassName: string;
+  clicked?:any
+
+}
+const { type, airaLabel, airaExpanded, airaControls, ClassName ,clicked} = Astro.props;
+---
+
+<button
+  type={type}
+  aria-label={airaLabel}
+  aria-expanded={airaExpanded}
+  aria-controls={airaControls}
+  class={ClassName}
+  onclick={clicked}
+>
+<slot/>
+</button>
+<style lang="scss">
+  @use "../../styles/helper/_color.scss" as *;
+  .btn-skew{
+    background-color: $hover;
+    &::before{
+      background-color: $hover-1;
+    }
+  }
+</style>

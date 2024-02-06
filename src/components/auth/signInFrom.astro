@@ -1,0 +1,41 @@
+---
+import Button from "../ui/Button.astro";
+import FormGroup from "../ui/FormGroup.astro";
+---
+
+<section class="sign-in">
+  <div class="container">
+    <form class="mx-auto round-12 p-12" id="loginForm" action="post">
+      <h1 class="text-center pb-12 fs-r-30">Member Login</h1>
+      
+      <FormGroup
+        type="email"
+        id="EmailAddressLogin"
+        place="Email Address"
+        title="Email Address"
+      />
+      <!--  -->
+      
+      <!--  -->
+      <FormGroup
+        type="password"
+        id="passwordLogin"
+        place="password"
+        title="password"
+      />
+      <!--  -->
+      <Button
+        type="submit"
+        airaLabel="sign in"
+        ClassName="btn btn-skew formLoginId round-6 d-flex align-items-center justify-center p-8 mx-auto"
+      >
+        Log in
+      </Button>
+    </form>
+    <p class="d-flex align-items-center justify-center pt-10 notMember">
+      Not a member yet?
+      <a href="signUp" class="pl-2"> Sign up now!</a>
+    </p>
+  </div>
+</section>
+<script src="../../scripts/form.ts"></script>

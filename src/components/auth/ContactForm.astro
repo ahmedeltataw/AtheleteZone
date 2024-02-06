@@ -1,0 +1,37 @@
+---
+import Button from "../ui/Button.astro";
+import FormGroup from "../ui/FormGroup.astro";
+---
+
+<section style="margin-top: 0;">
+  <div class="container">
+    <form class="mx-auto round-12 p-12" style="width: 600px;">
+      <h2 class="text-center fw-700 fs-28 pb-12 line-normal">Stay in touch</h2>
+      <FormGroup type="text" id="name" place="full name" title="full name" />
+      <FormGroup
+        type="email"
+        id="email"
+        place="email address"
+        title="email address"
+      />
+      <FormGroup
+        type="text"
+        id="phone"
+        place="enter phone number"
+        title="phone number"
+      />
+
+      <FormGroup>
+        <textarea class="px-5 round-6" style="height: 150px;"></textarea>
+        <label class="left-5 top-12"> Enter your message</label>
+      </FormGroup>
+      <Button
+        type={`button`}
+        airaLabel="send"
+        ClassName="formLoginId btn btn-skew py-8 round-6 mx-auto d-flex align-items-center justify-center"
+      >
+        Send
+      </Button>
+    </form>
+  </div>
+</section>

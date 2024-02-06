@@ -1,0 +1,19 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+//my components
+import Breadcrumb from "../components/ui/breadcrumb.astro";
+import BlogSection from "../components/blogSection.astro";
+//style
+import "../styles/pages/landing.scss";
+// my library  animation
+import "../styles/pages/about.scss";
+//data
+import {CardData} from "../data/data";
+---
+
+<Layout title="AtheleteZone | Blog">
+  <Breadcrumb defPage="home" linkPage="Blog" path="/" />
+  <BlogSection data={CardData} title="blog"/>
+  <script src="../scripts/scrollingAnimation.ts"></script>
+</Layout>

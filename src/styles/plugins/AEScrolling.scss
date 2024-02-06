@@ -1,0 +1,138 @@
+@use "../helper/extend";
+
+.AE_Scrolling {
+
+    // overflow: hidden;
+    &.fade-in {
+        @extend %AE_Scrolling;
+        transform: translateY(20px);
+
+        &.visible {
+            @extend %visible;
+        }
+
+    }
+
+
+    &.fade-in-down {
+        @extend %AE_Scrolling;
+        transform: translateY(-100px);
+
+
+        &.visible {
+            @extend %visible;
+        }
+    }
+
+    &.fade-in-up {
+        @extend %AE_Scrolling;
+        transform: translateY(100px);
+
+
+        &.visible {
+            @extend %visible;
+        }
+    }
+
+    &.fade-in-left {
+        @extend %AE_Scrolling;
+        transform: translateX(-100px);
+
+
+        &.visible {
+            @extend %visible;
+        }
+    }
+
+    &.fade-in-right {
+        @extend %AE_Scrolling;
+        transform: translateX(100px);
+
+
+        &.visible {
+            @extend %visible;
+        }
+    }
+
+    &.slide-up {
+        @extend %AE_Scrolling;
+        transform: translateY(100px);
+
+
+        &.visible {
+            @extend %visible;
+        }
+    }
+
+    &.slide-down {
+        @extend %AE_Scrolling;
+        transform: translateY(-100px);
+
+        &.visible {
+            @extend %visible;
+        }
+    }
+
+    &.slide-left {
+        @extend %AE_Scrolling;
+        transform: translateX(-100px);
+
+        &.visible {
+            @extend %visible;
+        }
+    }
+
+    &.slide-right {
+        @extend %AE_Scrolling;
+        transform: translateX(100px);
+
+        &.visible {
+            @extend %visible;
+        }
+    }
+
+    &.zoom-in {
+        @extend %AE_Scrolling;
+        transform: scale3d(0.1, 0.1, 0.1);
+        transform-origin: center bottom;
+
+        &.visible {
+            @extend %visible;
+
+        }
+    }
+
+    &.zoom-in-down {
+        @extend %AE_Scrolling;
+        transform: translateY(-100px) scale3d(0.1, 0.1, 0.1);
+        transform-origin: center bottom;
+
+        &.visible {
+            @extend %visible;
+
+        }
+    }
+
+    &.zoom-in-left {
+        @extend %AE_Scrolling;
+        transform: translateX(-100px) scale3d(0.1, 0.1, 0.1);
+        transform-origin: left center;
+
+        &.visible {
+            @extend %visible;
+
+        }
+    }
+
+    &.zoom-in-right {
+        @extend %AE_Scrolling;
+        transform: translateX(100px) scale3d(0.1, 0.1, 0.1);
+        transform-origin: right center;
+
+        &.visible {
+            @extend %visible;
+
+        }
+    }
+
+}

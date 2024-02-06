@@ -1,0 +1,55 @@
+---
+import MainHeading from "./ui/MainHeading.astro";
+import img1 from "../assets/cooking.jpg";
+import { Image } from "astro:assets";
+import Button from "./ui/Button.astro";
+---
+
+<section class="aboutSection">
+  <div class="container">
+    <MainHeading title="about us" />
+    <div class="row gap-1">
+      <div class="col-6-lg col-12-md col-12-sm">
+        <div
+          class="detailes AE_Scrolling fade-in-up"
+          data-Scrolling-duration="800"
+          data-Scrolling-delay={200}
+        >
+          <small class="fs-20 fw-600">Our Philosophy</small>
+          <h3 class="title fs-r-48 fw-700 capitalize line-normal pb-6">
+            Knowledge is power
+          </h3>
+          <p class="line-relaxed fs-18 mb-5">
+            “Studies show people who keep a food diary are more likely to hit
+            their goals. MyFitnessPal simplifies nutrition and calorie tracking,
+            provides the data you want, and helps you make sense of it all.
+          </p>
+          <p class="line-relaxed fs-18">
+            Healthy eating is a continuous journey of self-discovery. And the
+            more you track, the more empowered you’ll become to make healthy
+            choices that support your goals.”
+          </p>
+          <Button
+            type={`button`}
+            airaLabel="join me"
+            ClassName="btn btn-skew mt-13 round-6"
+          >
+            <a href="/signUp" class="p-8">Join us now</a>
+          </Button>
+        </div>
+      </div>
+      <!--  -->
+      <div class="col-6-lg col-12-md col-12-sm">
+        <div class="imgContainer round-6 relative">
+          <Image
+            src={img1}
+            alt={`s`}
+            quality={50}
+            format="webp"
+            class={`img-cover round-6 `}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

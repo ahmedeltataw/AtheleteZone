@@ -1,0 +1,31 @@
+@use './color' as*;
+@use './mixin' as *;
+
+%responsive-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
+
+
+%grid-system {
+    grid-template-columns: repeat(auto-fill, minmax(350px, auto));
+    justify-content: center;
+    gap: 20px 10px;
+}
+%visible {
+    opacity: 1;
+    transform: translateY(0);
+    transform: translateX(0);
+}
+%AE_Scrolling{
+    opacity: 0;
+}
+%label-focus{
+    top: -10px;
+    background-color: #fff;
+    transform: scale(.9);
+    color: $hover-1;
+}

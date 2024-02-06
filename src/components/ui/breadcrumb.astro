@@ -1,0 +1,26 @@
+---
+interface Props {
+  linkPage: string;
+  defPage: string;
+  path: string;
+}
+const { linkPage, defPage, path } = Astro.props;
+import "../../styles/components/ui/breadcrumb.scss"
+---
+
+<section class="breadcrumb d-flex align-items-center justify-center">
+  <div class="container">
+    <h1 class="title capitalize pb-5 text-center fs-r-36 fw-700 line-normal">
+      {linkPage}
+    </h1>
+    <ul class="d-flex align-items-center justify-center">
+      <li class="linkPage">
+        {linkPage}
+      </li>
+      <li class="separator"></li>
+      <li class="defPage capitalize">
+        <a href={path} class="">{defPage}</a>
+      </li>
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,50 @@
+---
+import { Image } from "astro:assets";
+import Logo from "../assets/logo.png";
+import { BeforeLogin } from "../data/data";
+import type { navBeforeLogin } from "../data/data";
+//style
+import "../styles/components/header.scss";
+//components
+import Responsive from "./header/responsive.astro";
+import Button from "../components/ui/Button.astro";
+---
+
+<header>
+  <div class="container">
+    <nav class="d-flex align-items-center py-6 justify-space-between">
+      <a href="/" class="logo">
+        <Image
+          src={Logo}
+          alt={`logo for AtheleteZone`}
+          format="webp"
+          quality={70}
+          class={`img-cover`}
+        />
+      </a>
+      <Button
+        type="button"
+        airaLabel="menu"
+        airaExpanded="false"
+        airaControls="mobileResponsive"
+        ClassName="btn icon-nav-base"
+      >
+        <span></span><span></span><span></span>
+      </Button>
+      <ul class="navMenu beforeLogin d-flex align-items-center lg-max-d-none">
+        {
+          BeforeLogin.map((link: navBeforeLogin) => (
+            <li class="nav-link pl-10 ">
+              <a href={link.path} class="fs-16 capitalize fw-600 relative">
+                {" "}
+                {link.title}{" "}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <Responsive />
+    </nav>
+  </div>
+</header>
+<script src="../scripts/headerBerforLogin.ts"></script>

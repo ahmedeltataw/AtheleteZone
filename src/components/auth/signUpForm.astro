@@ -1,0 +1,142 @@
+---
+import Button from "../ui/Button.astro";
+// import {nextTap} from "../../scripts/form"
+import FormGroup from "../ui/FormGroup.astro";
+---
+
+<section class="sign-in">
+  <div class="container">
+    <form class="mx-auto round-12 p-12" id="signUpForm"   action="post">
+      <h1 class="text-center fw-700 fs-20 pb-12 line-normal taps-h1">
+        
+      </h1>
+      <div class="taps">
+        <FormGroup
+          type="text"
+          id="name"
+          place="first name"
+          title="first name"
+        />
+      </div>
+      <!--select -->
+      <div class="taps form-group ">
+        <select id="chooseGoalSelect" class="form-select pl-5 round-6">
+          <option value="loseWeight">Lose weight</option>
+          <option value="maintainWeight">Maintain weight</option>
+          <option value="gainWeight">Gain weight</option>
+        </select>
+        <p class="errorMessage btnMessage pl-2 pt-4 fs-14"></p>
+      </div>
+      <!--  -->
+      <!--  select 2-->
+      <div class="taps form-group">
+        <select id="activeLevel" class="form-select pl-5 round-6">
+          <option value="NotVeryActive">Not Very Active</option>
+          <option value="LightlyActive">Lightly Active</option>
+          <option value="Active">Active</option>
+          <option value="VeryActive">Very Active</option>
+        </select>
+        <p class="errorMessage btnMessage pl-2 pt-4 fs-14"></p>
+      </div>
+      <!--  select + input-->
+      <div class="taps form-group">
+        <select id="selectSex" class="form-select pl-5 round-6">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+        <FormGroup
+          type="date"
+          id="date"
+          parentClass="mt-10"
+          MassageClass="btnMessage"
+        >
+          <p class="pb-5 fw-700 fs-20 line-normal born">When were you born?</p>
+        </FormGroup>
+
+        <!--  -->
+      </div>
+      <!--  -->
+      <!-- info height weight goal -->
+      <div class="taps">
+        <!-- Height -->
+        <FormGroup
+          type="text"
+          id="Height"
+          place="entery height use cm"
+          title="Height"
+        >
+          <p class="pb-5 fw-700 fs-20 line-normal born">How tall are you?</p>
+        </FormGroup>
+        <!-- weight -->
+        <FormGroup
+          type="text"
+          id="weigh"
+          place="entery weigh use kg"
+          title="weigh"
+        >
+          <p class="pb-5 fw-700 fs-20 line-normal born">How much do you weigh?</p>
+        </FormGroup>
+        <!--goal  weight -->
+        <FormGroup
+          type="text"
+          id="GoalsWeight"
+          place="entery goal weigh use kg"
+          title="goal weigh"
+        >
+          <p class="pb-5 fw-700 fs-20 line-normal born">What's your goal weight?</p>
+        </FormGroup>
+        <!--  -->
+      
+      </div>
+      <!--  -->
+      <!-- weekly goal -->
+      <div class="taps form-group weeklyGoal">
+        <select id="weeklyGoal" class="form-select pl-5 round-6">
+          
+        </select>
+        
+      </div>
+      <!--  -->
+      <div class="taps">
+        <!--  -->
+        <FormGroup
+          type="Email"
+          id="signUpEmail"
+          place="Email address"
+          title="Email address"
+        />
+        <!--  -->
+        <!--  -->
+        <FormGroup
+          type="password"
+          id="signUpPassword"
+          place="Create a password"
+          title="Create a password"
+        />
+        <!--  -->
+      </div>
+      <!--  -->
+      <div class="buttonForm d-flex align-items-center">
+        <Button
+          type="button"
+          airaLabel="sign up"
+          ClassName="prevBtn btn btn-skew  p-8 round-6 d-flex align-items-center justify-center  mx-auto"
+        >
+          Prev
+        </Button>
+        <Button
+          type="button"
+          airaLabel="sign up"
+          ClassName="nextBtn btn btn-skew  p-8 round-6 d-flex align-items-center justify-center  mx-auto "
+        >
+          Next
+        </Button>
+      </div>
+    </form>
+    <p class="d-flex align-items-center justify-center pt-10 notMember">
+      Got an account?
+      <a href="signIn" class="pl-2"> Sign In</a>
+    </p>
+  </div>
+</section>
+<script src="../../scripts/fromSteps.ts"></script>

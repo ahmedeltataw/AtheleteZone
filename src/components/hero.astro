@@ -1,0 +1,50 @@
+---
+//astro components
+import { Image } from "astro:assets";
+//img
+import HeroImg from "../assets/banner-3.jpg"
+
+//my components
+import Button from "./ui/Button.astro";
+---
+<section class="hero relative" ara-label="hero section">
+    <!-- backdrop img -->
+    <div class="backdrop img absolute top-0 left-0">
+        <Image src={HeroImg}
+         alt={`banner img`}
+         format="webp"
+         quality={50} 
+         class={`img-cover `}
+         decoding="async"
+         loading="eager"
+         />
+    </div>
+    <div class="container">
+        <div class="detailsHero relative AE_Scrolling fade-in "
+        data-Scrolling-duration="500"
+        data-Scrolling-delay="200"
+        >
+            <h1 class="fs-r-96 fw-600 pb-7">
+                Reach your goals
+                <br>
+                <small class="fw-400 capitalize fs-r-48 ">with</small>
+                <span class="fw-700 ">  AtheleteZone</span>
+            </h1>
+            <p class="fs-20 line-normal pb-7" >
+                Start setting your goal in a healthy way with our easy-to-use apps, tools, and online support.
+            </p>
+            <div class="buttonLogin pt-7">
+                
+                <Button type="button" airaLabel="go to sign up page" ClassName="btn btn-skew round-6 mb-5" >
+                    <a href="/signUp" class="px-9 py-7 fs-18 capitalize">
+                        Get Started
+                    </a>
+                </Button>
+                <small class="d-block">Already a member ? 
+                    <a href="/signIn" class="pl-1 fw-600">Sign in</a>
+                </small>
+            </div>
+
+        </div>
+    </div>
+</section>

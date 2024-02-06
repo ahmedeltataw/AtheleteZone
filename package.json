@@ -1,0 +1,28 @@
+{
+  "name": "athlete_zone",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.4.1",
+    "astro": "^4.3.1",
+    "astro-capo": "^0.0.1",
+    "astro-font": "^0.0.77",
+    "astro-icon": "^1.1.0",
+    "astro-purgecss": "^4.1.0",
+    "autoprefixer": "^10.4.17",
+    "cssnano": "^6.0.3",
+    "postcss-pxtorem": "^6.1.0",
+    "purgecss": "^5.0.0",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "sass": "^1.70.0"
+  }
+}

@@ -1,0 +1,17 @@
+---
+import Layout from "../layouts/Layout.astro";
+// import { Icon } from 'astro-icon/components'
+//my components
+import Breadcrumb from "../components/ui/breadcrumb.astro";
+import AboutSection from "../components/aboutSection.astro";
+
+// my library  animation
+import "../styles/plugins/AEScrolling.scss";
+import "../styles/pages/about.scss";
+---
+
+<Layout title="AtheleteZone | about us">
+  <Breadcrumb defPage="home" linkPage="About us" path="/" />
+  <AboutSection/>
+  <script src="../scripts/scrollingAnimation.ts"></script>
+</Layout>

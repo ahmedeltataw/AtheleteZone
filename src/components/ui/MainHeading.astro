@@ -1,0 +1,10 @@
+---
+interface Props{
+    title:string |any,
+}
+const {title} = Astro.props
+import "../../styles/components/ui/wavyHeading.scss"
+---
+<div class="mainHeading text-center">
+    <h2 class="fs-r-48 capitalize"> {title} </h2>
+</div>

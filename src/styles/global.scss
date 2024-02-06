@@ -1,0 +1,16 @@
+@use "./helper/color" as *;
+
+::-webkit-scrollbar-thumb {
+    background-color: $hover-2;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+body {
+    background-color: #f2faf9;
+    // height: 4000px;
+}

@@ -1,0 +1,37 @@
+---
+// to head
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+import { Head } from "astro-capo";
+import Font from "./font.astro";
+//style
+import "../styles/plugins/AE.css";
+import "../styles/global.scss";
+
+//components
+import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <Head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <Font />
+  </Head>
+  <body>
+    <main>
+      <Header />
+      <slot />
+      <Footer />
+    </main>
+  </body>
+</html>

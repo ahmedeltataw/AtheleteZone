@@ -1,0 +1,18 @@
+---
+import { BeforeLogin } from "../../data/data";
+import type { navBeforeLogin } from "../../data/data";
+---
+<div class="mobileMenu absolute  left-0 " id="mobileResponsive">
+    <ul class="NavMobile beforeLogin d-flex  ">
+        {
+          BeforeLogin.map((link: navBeforeLogin) => (
+            <li class="nav-link  py-6 pl-10">
+              <a href={link.path} class="fs-18 capitalize fw-600 relative ">
+                {" "}
+                {link.title}{" "}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+</div>

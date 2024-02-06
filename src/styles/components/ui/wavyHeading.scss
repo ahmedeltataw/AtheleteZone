@@ -1,0 +1,10 @@
+@use "../../helper/color" as *;
+.mainHeading {
+    padding-bottom: 8vh;
+    color: $hover-1;
+
+    h2 {
+        text-decoration: underline wavy  $hover-1 4px;
+        text-underline-offset: 10px;
+    }
+}
