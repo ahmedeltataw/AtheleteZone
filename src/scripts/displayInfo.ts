@@ -70,16 +70,16 @@ let openModel = (button: any) => {
 }
 // close model
 let closeModel = () => {
-  
+
     if (Model) Model.classList.remove("effect")
     setTimeout(() => {
         if (Model) Model.classList.remove("open");
-       
+
     }, 300)
     if (Search) Search.value = ''
     if (q) q.value = ''
     if (kcal) kcal.value = ''
-   
+
 }
 
 closeBtn.onclick = closeModel;
@@ -90,36 +90,50 @@ function deleteRow2(button: any) {
     // Delete the row
     row.remove();
 }
-// calc total 
+// all row calc total 
 let calcTotal = (idxCol: number, mins: boolean) => {
     let newCell = tfoot.cells[idxCol];
     console.log(newCell)
     let total: number = 0;
-    
+
     for (let i = 1; i < rows.length - 1; i++) {
         let td = rows[i].getElementsByTagName("td")[idxCol]
         console.log(td)
-        
-        let values:any = Number(td.innerText)
+
+        let values: any = Number(td.innerText)
         // console.log(values)
         total += values;
     }
     newCell.innerHTML = total.toString();
     if (mins) {
-        let result = total; 
+        let result = total;
         for (let i = 1; i < rows.length - 1; i++) {
             let td = rows[1].getElementsByTagName("td")[idxCol]
-            
+
             // console.log(td )
             let values = Number(td.innerText)
-            
+
             // console.log(values)
             result -= values;
         }
         newCell.innerHTML = total.toString()
     }
-    
+
 }
+
+// total kcal food 
+function calculateTotalKcal() {
+    let totalFoodKcal: number = 0;
+    let totalKca = document.querySelectorAll(".totalKcal") as NodeListOf<HTMLTableCellElement>;
+    
+    for (let i = 0; i < totalKca.length; i++) {
+        let td = totalKca[i].innerText.trim();
+        totalFoodKcal += Number(td);
+        localStorage.setItem("allTotal" , totalFoodKcal.toString())
+    }
+}
+
+
 // add row value
 
 let addRowValue = (FValue: number, CValue: number, PValue: number) => {
@@ -130,7 +144,6 @@ let addRowValue = (FValue: number, CValue: number, PValue: number) => {
     if (Search) getSearchValue = Search.value
 
     let newRow = tbody.insertRow();
-    console.log(tbody)
     let fristCell = newRow.insertCell(0);
     fristCell.setAttribute("class", "food-type")
     fristCell.innerHTML = getSearchValue;
@@ -158,16 +171,17 @@ let addRowValue = (FValue: number, CValue: number, PValue: number) => {
                 calcTotal(2, true)
                 calcTotal(3, true)
                 calcTotal(4, true)
+                calculateTotalKcal()
             })
         })
     }
-    
-    
-        calcTotal(1, false)
-        calcTotal(2, false)
-        calcTotal(3, false)
-        calcTotal(4, false)
-        
+
+
+    calcTotal(1, false)
+    calcTotal(2, false)
+    calcTotal(3, false)
+    calcTotal(4, false)
+    calculateTotalKcal()
 }
 
 
@@ -235,10 +249,9 @@ searching.addEventListener("click", async function () {
 
 
 
-
 addBtn.onclick = function () {
     addRowValue(f, c, p)
-    
+
 };
 
 let buttons: NodeListOf<HTMLButtonElement> = document.querySelectorAll(".clicked")

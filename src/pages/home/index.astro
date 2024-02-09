@@ -11,18 +11,25 @@ import "../../styles/pages/home.scss";
 ---
 
 <Layout title="AtheleteZone | Home">
-  <Breadcrumb linkPage="hi,"  isCrumb={false}/>
+  <Breadcrumb linkPage="hi," isCrumb={false} />
   <HomeSection />
   <!-- <script src="../scripts/scrollingAnimation.ts"></script> -->
   <!-- <script src="../../scripts/displayInfo.ts"></script> -->
 </Layout>
 <script>
-  let displayBmr: any = document.querySelector("#bmrUpdate span")
-  let userName: any = document.querySelector("#userName")
-  let getBmr: any = localStorage.getItem("getBmr")
-let getUserName: any = localStorage.getItem("UserName")
-let bmrUpdate: any = document.querySelector("#bmr span")
-if (displayBmr) displayBmr.innerHTML = getBmr;
-if (bmrUpdate) bmrUpdate.innerHTML = getBmr;
-if (userName) userName.innerHTML = getUserName.split("@")[0];
+  let displayBmr: any = document.querySelector("#bmrUpdate span");
+  let userName: any = document.querySelector("#userName");
+  let FoodTotal: any = document.querySelector("#FoodTotal span");
+  let getBmr: any = localStorage.getItem("getBmr");
+  let allTotal: any = localStorage.getItem("allTotal");
+  let getUserName: any = localStorage.getItem("UserName");
+  let bmrUpdate: any = document.querySelector("#bmr span");
+  if (displayBmr) displayBmr.innerHTML = getBmr;
+  if (bmrUpdate) bmrUpdate.innerHTML = getBmr;
+  if (userName) userName.innerHTML = getUserName.split("@")[0];
+  if (allTotal !== null) {
+    if (FoodTotal) FoodTotal.innerHTML = allTotal;
+  } else{
+    if (FoodTotal) FoodTotal.innerHTML = '0';
+  }
 </script>

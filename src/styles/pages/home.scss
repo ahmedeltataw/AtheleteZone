@@ -36,7 +36,7 @@ footer {
             }
 
             ul {
-
+                flex-flow: wrap;
 
                 li {
                     &.line {
@@ -59,7 +59,7 @@ footer {
                     &.button {
                         margin-left: 5vh;
 
-                        button{
+                        button {
                             @extend %btn-skew-border;
                         }
                     }

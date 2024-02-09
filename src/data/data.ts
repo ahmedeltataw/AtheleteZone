@@ -33,15 +33,15 @@ export  const AfterLogin:navBeforeLogin[]=[
     },
     {
         title:"add food",
-        path:"/food.html"
+        path:"/home/food.html"
     },
     {
         title:"add workout",
-        path:"/addWorkout.html"
+        path:"/home/addWorkout.html"
     },
     {
         title:"setting",
-        path:"/setting.html"
+        path:"/home/setting.html"
     },
     {
         title:"blog",
