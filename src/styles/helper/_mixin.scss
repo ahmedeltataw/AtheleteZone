@@ -10,6 +10,12 @@
         
     }
 }
+@mixin input($h ,$w,$bc){
+    height: $h;
+    width: $w;
+    outline: 0;
+    border: 1px solid $bc;
+}
 
 @mixin centerPosition() {
     position: absolute;

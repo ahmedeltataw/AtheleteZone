@@ -46,7 +46,7 @@ export function validateInput(input: HTMLInputElement  |any) :boolean {
                 case 'GoalsWeight':
                     errorMassage.innerText = 'Please enter your goal weigh.';
                     break;
-                
+                default: errorMassage.innerText = 'Please fill this filed.';
                 
             }
         }

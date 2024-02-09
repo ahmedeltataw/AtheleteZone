@@ -1,0 +1,112 @@
+---
+import Button from "./ui/Button.astro";
+import Model from "./ui/Model.astro";
+---
+
+<section class="food relative">
+  <div class="container">
+    <table>
+      <thead>
+        <tr>
+          <td class="food-title">Breakfast</td>
+          <td>Calories <br /> <span>kcal</span></td>
+          <td>Carbs <br /> <span>g</span></td>
+          <td>Fat <br /> <span>g</span></td>
+          <td>Protein <br /> <span>g</span></td>
+          <td class="delete"></td>
+        </tr>
+      </thead>
+      <tbody class="BreakfastBody"> </tbody>
+      <tfoot>
+        <tr>
+          <td class="food-type">
+            <Button
+              type={`button`}
+              airaLabel="add food"
+              ClassName="btn btn-skew round-6 addFood skew-border clicked"
+              airaExpanded={false}
+              airaControls="AddFoodModel"
+            >
+              add food
+            </Button>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tfoot>
+    </table>
+    <hr />
+    <!--  -->
+    <table>
+      <thead>
+        <tr>
+          <td class="food-title">Lunch</td>
+          <td style="visibility: hidden;">Calories <br /> <span>kcal</span></td>
+          <td style="visibility: hidden;">Carbs <br /> <span>g</span></td>
+          <td style="visibility: hidden;">Fat <br /> <span>g</span></td>
+          <td style="visibility: hidden;">Protein <br /> <span>g</span></td>
+          <!-- <td class="delete"></td> -->
+        </tr>
+      </thead>
+      <tbody class="BreakfastBody"> </tbody>
+      <tfoot>
+        <tr>
+          <td class="food-type">
+            <Button
+              type={`button`}
+              airaLabel="add food"
+              ClassName="btn btn-skew round-6 addFood skew-border clicked"
+              airaExpanded={false}
+              airaControls="AddFoodModel"
+            >
+              add food
+            </Button>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tfoot>
+    </table>
+    <!--  -->
+    <hr />
+    <!--  -->
+    <table>
+      <thead>
+        <tr>
+          <td class="food-title">Dinner</td>
+          <td style="visibility: hidden;">Calories <br /> <span>kcal</span></td>
+          <td style="visibility: hidden;">Carbs <br /> <span>g</span></td>
+          <td style="visibility: hidden;">Fat <br /> <span>g</span></td>
+          <td style="visibility: hidden;">Protein <br /> <span>g</span></td>
+          <!-- <td class="delete"></td> -->
+        </tr>
+      </thead>
+      <tbody class="BreakfastBody"> </tbody>
+      <tfoot>
+        <tr>
+          <td class="food-type">
+            <Button
+              type={`button`}
+              airaLabel="add food"
+              ClassName="btn btn-skew round-6 addFood skew-border clicked"
+              airaExpanded={false}
+              airaControls="AddFoodModel"
+            >
+              add food
+            </Button>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tfoot>
+    </table>
+    <!--  -->
+  </div>
+  <Model />
+</section>

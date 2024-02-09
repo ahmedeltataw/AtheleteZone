@@ -1,0 +1,87 @@
+@use "../helper/color" as *;
+@use "../helper/extend";
+
+footer {
+    margin-top: 0;
+}
+
+.home {
+
+    min-height: 70vh;
+
+    .details {
+        padding-top: 12vh;
+    }
+
+    .card {
+        background-image:
+            linear-gradient(to right, #fff 55% 55%, #f0f0f0 110% 110%);
+        width: 600px;
+        max-width: 100%;
+        height: 100%;
+        box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.12);
+
+        .title {
+            background-color: $hover-1;
+            color: #fff;
+
+        }
+
+        .cardDetails {
+            @extend %grid-center;
+
+
+            hr {
+                opacity: .3;
+            }
+
+            ul {
+
+
+                li {
+                    &.line {
+                        opacity: .2;
+                        height: 100%;
+
+                    }
+
+                    // &.separator {
+
+                    //     opacity: .8;
+
+                    // }
+
+                    &.top,
+                    &.bottom {
+                        flex-direction: column;
+                    }
+
+                    &.button {
+                        margin-left: 5vh;
+
+                        button{
+                            @extend %btn-skew-border;
+                        }
+                    }
+
+
+
+                    &.bottom,
+                    small,
+                    &.separator {
+                        opacity: .8;
+                    }
+                }
+            }
+        }
+
+
+
+    }
+
+    #bmr {
+        span {
+            color: $hover-1;
+        }
+    }
+}

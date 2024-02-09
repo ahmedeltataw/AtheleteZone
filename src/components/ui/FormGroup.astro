@@ -10,7 +10,7 @@ interface Props {
 const { id, place, type, title, MassageClass, parentClass } = Astro.props;
 ---
 
-<div  class:list={`form-group relative ${parentClass }`}>
+<div  class:list={`form-group relative ${parentClass ? parentClass:''}`}>
   <slot />
   {
     id && (
@@ -21,6 +21,7 @@ const { id, place, type, title, MassageClass, parentClass } = Astro.props;
           id={id}
           placeholder={place}
           name={id}
+          required
         />
         {title && (
           <label for={id} class="top-50 left-5">

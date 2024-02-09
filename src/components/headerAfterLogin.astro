@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Logo from "../assets/logo.png";
-import { BeforeLogin } from "../data/data";
+import { AfterLogin } from "../data/data";
 
 //style
 import "../styles/components/header.scss";
@@ -33,8 +33,8 @@ import UlLink from "./header/UlLink.astro";
       >
         <span></span><span></span><span></span>
       </Button>
-        <UlLink data={BeforeLogin} isLogin={true}/>
-      <Responsive data={BeforeLogin} isLogin={true}/>
+        <UlLink data={AfterLogin} isLogin={true}/>
+      <Responsive data={AfterLogin} isLogin={true}/>
     </nav>
   </div>
 </header>

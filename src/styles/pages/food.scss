@@ -1,0 +1,299 @@
+@use "../helper/color" as *;
+@use "../helper/extend" as *;
+@use "../helper/mixin" as *;
+
+.food,
+.workOut {
+    min-height: 40vh;
+    margin-top: 8vh;
+}
+
+.food {
+
+
+    hr {
+        opacity: .4;
+        width: 800px;
+        max-width: 100%;
+        margin: 0 auto;
+        // padding: 10px;
+    }
+
+    table {
+        width: 800px;
+        max-width: 100%;
+        margin: 0 auto;
+
+
+
+        td {
+            padding: 10px;
+        }
+
+        thead {
+
+
+            td {
+                // max-width: 100%;
+                font-weight: 700;
+                font-size: 18px;
+                text-align: center;
+                background-color: $hover-1;
+                color: #fff;
+
+
+
+
+
+                span {
+                    opacity: .5;
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+
+                &.food-title {
+                    text-align: left;
+                    width: 350px;
+
+
+                    font-size: 24px;
+                    color: $hover-1;
+                }
+
+                &.delete,
+                &.food-title {
+                    background-color: transparent;
+                }
+
+            }
+        }
+
+        tbody {
+            background-color: #d9d9d9;
+
+        }
+
+        tbody,
+        tfoot {
+
+            text-align: center;
+
+            td {
+
+                &.food-type {
+                    text-align: left;
+                    padding-left: 30px;
+                }
+            }
+        }
+
+        tfoot {
+            td {
+                &.food-type {
+                    .skew-border {
+                        @extend %btn-skew-border;
+                        padding: 10px 25px;
+
+                    }
+                }
+            }
+        }
+
+        .deleteRow {
+            cursor: pointer;
+            color: rgb(189, 35, 35);
+        }
+    }
+
+
+    .model {
+
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.515);
+        width: 100%;
+        height: 100%;
+        z-index: 1024;
+        backdrop-filter: blur(2px);
+        transition: $t-l;
+
+        &.effect {
+            transform: scale(1);
+        }
+
+        &:not(.effect) {
+            transform: scale(0);
+        }
+
+        &.open {
+            display: block;
+        }
+
+        &:not(.open) {
+            display: none;
+        }
+
+        .box {
+            @extend %centerPosition;
+            background-color: #fff;
+            width: 600px;
+            max-width: 100%;
+            box-shadow: 0px 8px 32px rgba(27, 173, 183, 0.12);
+            min-height: 10%;
+
+            .form-group {
+                flex-flow: row wrap;
+
+                label {
+                    min-width: 110px;
+                    color: $text;
+
+                    @media (max-width:587px) {
+                        padding-bottom: 10px;
+                    }
+                }
+
+                .search-box {
+                    width: 60%;
+                    max-width: 100%;
+
+                    input {
+                        width: 100%;
+                    }
+                }
+
+                input {
+                    @include input(40px, 60%, rgba($color: $text, $alpha: .5));
+                    transition: $t-s;
+
+                    @media (max-width:305px) {
+                        margin-bottom: 8px;
+                    }
+
+                    &:hover,
+                    &:focus {
+                        border-color: $hover-1;
+                    }
+
+                    &::placeholder {
+                        font-size: 14px;
+                        opacity: .8;
+                    }
+
+                }
+
+            }
+
+            .skew-border {
+
+                @extend %btn-skew-border;
+                padding: 10px 25px;
+            }
+
+            .icon-close {
+                width: 36px;
+                aspect-ratio: 1;
+                background-color: $hover;
+                color: #fff;
+                position: absolute;
+                top: -.5px;
+                right: 0px;
+                border-top-right-radius: 8px;
+                border-bottom-left-radius: 8px;
+            }
+
+            .list {
+                position: absolute;
+                top: 40px;
+                background: rgb(230, 230, 230);
+                padding: 0 15px;
+                width: 100%;
+                z-index: 1025;
+                border-radius: 6px;
+
+                &.open {
+                    display: block;
+
+                }
+
+                &:not(.open) {
+                    display: none;
+                }
+
+                li {
+                    border-bottom: 1px solid rgba(106, 106, 106, 0.3);
+                    padding: 8px 0;
+                    display: flex;
+                    flex-direction: column;
+                    color: $hover-1;
+                    font-weight: 600;
+                    cursor: pointer;
+
+                    small {
+                        font-size: 14px;
+                        padding-top: 5px;
+                        opacity: .7;
+                        color: $text;
+                    }
+
+                    &:last-child {
+                        border: 0;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.workOut {
+    .box {
+        width: 600px;
+        max-width: 100%;
+        box-shadow: 0px 8px 32px rgba(27, 173, 183, 0.12);
+        background-color: #fff;
+        margin: 0 auto;
+
+        .form-group {
+            flex-flow: row wrap;
+
+            label {
+                min-width: 130px;
+                color: $text;
+
+                @media (max-width:587px) {
+                    padding-bottom: 10px;
+                }
+            }
+
+
+
+            input {
+                @include input(40px, 45%, rgba($color: $text, $alpha: .5));
+                transition: $t-s;
+
+                @media (max-width:305px) {
+                    margin-bottom: 8px;
+                }
+
+                &:hover,
+                &:focus {
+                    border-color: $hover-1;
+                }
+
+                &::placeholder {
+                    font-size: 14px;
+                    opacity: .8;
+                }
+
+            }
+
+        }
+
+        .skew-border {
+
+            @extend %btn-skew-border;
+            padding: 10px 25px;
+        }
+    }
+
+}

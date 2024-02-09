@@ -1,0 +1,23 @@
+---
+import type { navBeforeLogin } from "../../data/data";
+interface Props{
+    data:any[],
+    isLogin:boolean,
+}
+const{data , isLogin} = Astro.props
+---
+<ul class="navMenu beforeLogin d-flex align-items-center lg-max-d-none">
+    
+    {
+        isLogin && (
+        data.map((link: navBeforeLogin) => (
+        <li class="nav-link pl-10 ">
+          <a href={link.path} class="fs-16 capitalize fw-600 relative">
+            {" "}
+            {link.title}{" "}
+          </a>
+        </li>
+      ))
+        )
+    }
+  </ul>

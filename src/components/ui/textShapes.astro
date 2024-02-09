@@ -1,0 +1,43 @@
+---
+    interface Props{
+        dir: 'up' | 'down';
+        htmlType: "div" | "li" ;
+        mainText:string;
+        subText:string;
+        className?:string;
+        id?:string;
+        subClass?:string;
+    }
+    const {dir,htmlType,mainText,subText,className,id,subClass} = Astro.props;
+---
+{
+    htmlType == "div" ? (
+    <div class={`d-flex ${className ? className : ''}`}>
+        {
+            dir == "up" ? (
+            <small class:list={subClass?subClass:''}>{subText}</small>
+            <p  id={id}>{mainText}</p>
+            ):(
+            <p id={id}>{mainText}</p>
+            <small class:list={subClass?subClass:''}>{subText}</small>
+            )
+        }
+      </div>
+    ):(
+    <li class={`d-flex ${className ? className : ''}`}  id={id}>
+        {
+            dir == "up" ? (
+            <small class:list={subClass?subClass:''}>{subText}</small>
+            <> 
+                {id ? (<span>{mainText}</span>) : (<>{mainText}</>)}
+            </>
+            ):(
+            <> 
+            {id ? (<span>{mainText}</span>) : (<>{mainText}</>)}
+            </>
+            <small class:list={subClass?subClass:''}>{subText}</small>
+            )
+        }
+      </li>
+    )
+}

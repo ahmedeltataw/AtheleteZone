@@ -1,0 +1,49 @@
+---
+import Model from "./ui/Model.astro";
+import Button from "./ui/Button.astro";
+---
+
+<section class="workOut">
+  <div class="contaienr">
+    <div class="box box py-9 px-10 round-12">
+      <p
+        class="title text-center fs-24 fw-700 pb-10 capitalize title text-center fs-24 fw-700 pb-10 capitalize"
+      >
+        add workout
+      </p>
+      <div class="form-group d-flex align-items-center pb-10">
+        <label for="SearchWorkout" class="fw-600 fs-18 pr-8"
+          >Search Workout</label
+        >
+        <input
+          type="text"
+          class="pl-5 round-6"
+          name="SearchWorkout"
+          id="SearchWorkout"
+        />
+        <Button
+          type={`button`}
+          airaLabel="work out"
+          ClassName="btn btn-skew ml-8 px-9  fs-14 py-3 round-6 "
+        >
+          search
+        </Button>
+      </div>
+      <div class="form-group d-flex align-items-center pb-10">
+        <label for="Period" class="fw-600 fs-18 pr-12">Period</label>
+        <input type="text" class="pl-5 round-6" id="Period" name="Period" />
+      </div>
+      <div class="form-group d-flex align-items-center pb-10">
+        <label for="" class="fw-600 fs-18 pr-8">Burned Calotise</label>
+        <input type="text" class="pl-5 round-6" />
+      </div>
+      <Button
+        type={`button`}
+        airaLabel="work out"
+        ClassName="btn btn-skew px-9  fs-14 py-3 round-6 d-flex align-items-center justify-center mx-auto skew-border"
+      >
+        add workout
+      </Button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,19 @@
+---
+import Layout from "../../layouts/AfterLoginLayout.astro";
+// import { Icon } from 'astro-icon/components'
+//my components
+import Breadcrumb from "../../components/ui/breadcrumb.astro";
+import FoodSection from "../../components/workOutSection.astro"
+
+//sty;e
+import "../../styles/pages/food.scss";
+// my library  animation
+
+---
+
+<Layout title="AtheleteZone | Home">
+  <Breadcrumb linkPage="addworkout" defPage="home"  isCrumb={true} path="/home"/>
+  <FoodSection />
+  
+  
+</Layout>

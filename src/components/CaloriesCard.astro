@@ -1,0 +1,79 @@
+---
+import Button from "./ui/Button.astro";
+import TextShapes from "./ui/textShapes.astro";
+---
+
+<div class="card mx-auto round-12">
+  <h2 class="title fs-18 fw-500 px-7 py-9 round-t-8">Your Daily Summary</h2>
+  <!--  -->
+  <div class="cardDetails py-10 px-14">
+    <ul class="goal d-flex align-items-center mb-10">
+      <TextShapes
+        dir="up"
+        htmlType="li"
+        mainText=""
+        subText="Calories Remaining"
+        className="top fs-48 fw-700"
+        id="bmr"
+        subClass="fs-12 fw-400"
+      />
+      <li class="button pt-3">
+        <Button
+          type={"button"}
+          airaLabel="add food"
+          ClassName="btn btn-skew round-6"
+        >
+          <a href="/home/food" class="px-12 py-6 fs-14"> add food</a>
+        </Button>
+        <Button
+          type={"button"}
+          airaLabel="add food"
+          ClassName="btn btn-skew round-6 ml-5"
+        >
+          <a href="/food" class="px-12 py-6 fs-14"> add workout</a>
+        </Button>
+      </li>
+    </ul>
+    <!--  -->
+    <hr />
+    <ul class="d-flex align-items-center mt-10">
+      <TextShapes
+        dir="down"
+        htmlType="li"
+        mainText="2025"
+        subText="goal"
+        className="bottom fs-36 fw-600 mr-10  test"
+        subClass="fs-14 fw-500"
+        id="bmrUpdate"
+      />
+      <li class="mr-10 fs-24 mb-8 fw-400 line">|</li>
+      <TextShapes
+        dir="down"
+        htmlType="li"
+        mainText="121"
+        subText="food"
+        className="bottom fs-36 fw-600 mr-10"
+        subClass="fs-14 fw-500"
+      />
+      <li class="separator mr-10 fs-24 mb-8 fw-700 round-4">-</li>
+      <TextShapes
+        dir="down"
+        htmlType="li"
+        mainText="0"
+        subText="EXERCISE"
+        className="bottom fs-36 fw-600 mr-10"
+        subClass="fs-14 fw-500"
+      />
+      <li class="separator mr-10 fs-24 mb-8">=</li>
+      <TextShapes
+        dir="down"
+        htmlType="li"
+        mainText="0"
+        subText="net"
+        className="bottom fs-36 fw-600 mr-10"
+        subClass="fs-14 fw-500"
+      />
+    </ul>
+    <!--  -->
+  </div>
+</div>

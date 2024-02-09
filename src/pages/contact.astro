@@ -7,14 +7,14 @@ import ContactForm from "../components/auth/ContactForm.astro";
 //style
 import "../styles/pages/auth.scss"
 // my library  animation
-import "../styles/plugins/AEScrolling.scss";
+
 
 //data
 
 ---
 
 <Layout title="AtheleteZone | Contact us">
-  <Breadcrumb defPage="home" linkPage="Contact us" path="/" />
+  <Breadcrumb defPage="home" linkPage="Contact us" path="/" isCrumb={true}/>
   <ContactForm/>
-  <script src="../scripts/scrollingAnimation.ts"></script>
+  
 </Layout>

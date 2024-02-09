@@ -10,19 +10,46 @@ export  const BeforeLogin:navBeforeLogin[]=[
     },
     {
         title:"About us",
-        path:"/About.html"
+        path:"/About"
     },
     {
         title:"blog",
-        path:"/blog.html"
+        path:"/blog"
     },
     {
         title:"workout",
-        path:"/workout.html"
+        path:"/workout"
     },
     {
         title:"contact us",
-        path:"/contact.html"
+        path:"/contact"
+    }
+
+];
+export  const AfterLogin:navBeforeLogin[]=[
+    {
+        title:"home",
+        path:'/home'
+    },
+    {
+        title:"add food",
+        path:"/food"
+    },
+    {
+        title:"add workout",
+        path:"/addWorkout"
+    },
+    {
+        title:"setting",
+        path:"/setting"
+    },
+    {
+        title:"blog",
+        path:"/blog"
+    },
+    {
+        title:"contact us",
+        path:"/contact"
     }
 
 ];

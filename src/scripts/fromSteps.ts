@@ -1,62 +1,35 @@
 import { validateInput, validateInputBlur, validateForm } from "../scripts/form";
-import { weeklyGoalOptionsGain, weeklyGoalOptionsLose } from "../data/data";
-import type { OptionsGoalWeekly } from "../data/data";
+import { defaultOptionAndChangeOption, getUserInfo, getBmr } from "../scripts/userDetails";
 let taps: NodeListOf<HTMLInputElement> | any = document.querySelectorAll(".taps")
 let tapsInputs: NodeListOf<HTMLInputElement> = document.querySelectorAll("#signUpForm input")
 let prev: any = document?.querySelector(".prevBtn")
 let next: any = document?.querySelector(".nextBtn")
 let heading: any = document.querySelector(".taps-h1")
-let chooseGoalId: HTMLSelectElement | any = document.querySelector("#chooseGoalSelect");
-let chooseGoalSelect: HTMLSelectElement | any = document.querySelector("#weeklyGoal");
-let SelectGoalValue: any = "";
+
 let currentTap: number = 0;
 
 
 
 
-localStorage.setItem("selectedGoal", chooseGoalId[0].value);
-chooseGoalId.addEventListener("change", () => {
-    SelectGoalValue = chooseGoalId.value
-    localStorage.setItem("selectedGoal", SelectGoalValue);
-    weeklyGoalCheck();
-})
-
-
-// to creat option select 
-const weeklyGoalCheck: any = () => {
-    chooseGoalSelect.innerHTML = ""
-    if (localStorage.getItem("selectedGoal") == "gainWeight") {
 
 
 
-        weeklyGoalOptionsGain.forEach((options: OptionsGoalWeekly) => {
-            const option = document.createElement("option");
-            option.value = options.value
-            option.text = options.text
-            chooseGoalSelect.appendChild(option)
-        })
-    } else if (localStorage.getItem("selectedGoal") == "loseWeight") {
-
-        weeklyGoalOptionsLose.forEach((options: OptionsGoalWeekly) => {
-            const option = document.createElement("option");
-            option.value = options.value
-            option.text = options.text
-            chooseGoalSelect.appendChild(option)
-        })
-    }
-}
-weeklyGoalCheck();
 
 //next o move
 next.addEventListener("click", (e: Event) => {
     if (next.textContent.includes('Submit')) {
         e.preventDefault();
-        console.log('form send')
+
         next.type = "submit"
+
+
         const isValid = validateForm(tapsInputs);
         if (isValid) {
-
-            window.location.href = '/';
+            getUserInfo();
+            getBmr();
+            
+            window.location.href = '/home';
+            console.log('form send')
         }
 
 
@@ -116,7 +89,7 @@ function Show(n: number) {
             heading.innerHTML = ` Almost there! Create your account.`;
             // p.innerHTML = ` When were you born? `
             break;
-
+        default: heading.innerHTML = ` sorry bro i'm forget the title `;
     }
 }
 Show(currentTap);
@@ -161,3 +134,5 @@ function nextTap(n: number) {
 validateInputBlur(tapsInputs);
 
 
+//option
+defaultOptionAndChangeOption()

@@ -1,0 +1,70 @@
+---
+import Button from "./Button.astro";
+import { Icon } from "astro-icon/components";
+import AutoList from "./autoList.astro";
+---
+
+<div class="model fixed" id="AddFoodModel">
+  <div class="box py-9 px-10 round-12">
+    <p class="title text-center fs-24 fw-700 pb-10 capitalize showTitle"></p>
+    <form class="search">
+      <div class="form-group d-flex align-items-center pb-10">
+        <label class="fw-600 fs-18 pr-8" for="inputSearch">search food</label>
+        <div class="relative search-box">
+          <input
+            type="text"
+            placeholder="search food"
+            name="inputSearch"
+            id="inputSearch"
+            class="pl-5 round-6"
+          />
+          <AutoList />
+        </div>
+        <Button
+          type={`button`}
+          airaLabel="search food"
+          ClassName="btn btn-skew ml-8 px-9  fs-14 py-3 round-6 searching"
+        >
+          search
+        </Button>
+      </div>
+    </form>
+    <div class="form-group d-flex align-items-center pb-10">
+      <label for="quantity" class="fw-600 fs-18 pr-8">quantity</label>
+      <input
+        type="text"
+        placeholder="quantity"
+        id="quantity"
+        name="quantity"
+        class="pl-5 round-6"
+      />
+    </div>
+    <div class="form-group d-flex align-items-center pb-10">
+      <label class="fw-600 fs-18 pr-8" for="calories">calories</label>
+      <input
+        type="text"
+        placeholder="calories"
+        id="calories"
+        name="calories"
+        class="pl-5 round-6"
+        disabled
+      />
+    </div>
+    <Button
+      type={`button`}
+      airaLabel="search food"
+      ClassName="add btn btn-skew px-9  fs-14 py-3 round-6 d-flex align-items-center justify-center mx-auto skew-border"
+    >
+      add food
+    </Button>
+    <Button
+      type={"button"}
+      airaLabel="close menu"
+      airaExpanded={true}
+      airaControls="AddFoodModel"
+      ClassName=" btn icon-close"
+    >
+      <Icon name="close" />
+    </Button>
+  </div>
+</div>

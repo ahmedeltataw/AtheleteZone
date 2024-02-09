@@ -1,0 +1,17 @@
+---
+import Layout from "../../layouts/AfterLoginLayout.astro";
+// import { Icon } from 'astro-icon/components'
+//my components
+import Breadcrumb from "../../components/ui/breadcrumb.astro";
+import FoodSection from "../../components/foodSection.astro"
+//sty;e
+import "../../styles/pages/food.scss";
+
+---
+
+<Layout title="AtheleteZone | Home">
+  <Breadcrumb linkPage="food" defPage="home"  isCrumb={true} path="/home"/>
+  <FoodSection />
+
+  <script src="../../scripts/displayInfo.ts"></script>
+</Layout>
