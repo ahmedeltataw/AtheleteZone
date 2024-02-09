@@ -28,7 +28,7 @@ next.addEventListener("click", (e: Event) => {
             getUserInfo();
             getBmr();
             
-            window.location.href = '/home';
+            window.location.href = '/home.html';
             console.log('form send')
         }
 

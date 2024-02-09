@@ -95,7 +95,7 @@ formLoginButton?.addEventListener("click", function (e: Event) {
    
     if (isValid) {
         // Redirect to the home page
-        window.location.href = '/'; 
+        window.location.href = '/home.html'; 
     }
 
    

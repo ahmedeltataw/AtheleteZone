@@ -1470,6 +1470,22 @@ function normalizeProps(props) {
   return props;
 }
 
+function mergeSlots(...slotted) {
+  const slots = {};
+  for (let slot of slotted) {
+    if (!slot)
+      continue;
+    if (Array.isArray(slot)) {
+      slot = mergeSlots(...slot);
+    }
+    if (typeof slot === "object") {
+      Object.assign(slots, slot);
+    } else if (typeof slot === "function") {
+      Object.assign(slots, mergeSlots(slot()));
+    }
+  }
+  return slots;
+}
 function spreadAttributes(values = {}, _name, { class: scopedClassName } = {}) {
   let output = "";
   if (scopedClassName) {
@@ -1487,4 +1503,4 @@ function spreadAttributes(values = {}, _name, { class: scopedClassName } = {}) {
   return markHTMLString(output);
 }
 
-export { AstroError as A, ExpectedImage as E, Fragment as F, IncompatibleDescriptorOptions as I, LocalImageUsedWrongly as L, MissingImageDimension as M, UnsupportedImageFormat as U, UnsupportedImageConversion as a, MissingSharp as b, createComponent as c, renderAllHeadContent as d, createAstro as e, renderTemplate as f, addAttribute as g, renderComponent as h, ExpectedImageOptions as i, InvalidImageService as j, ImageMissingAlt as k, renderSlot as l, maybeRenderHead as m, renderSlotToString as r, spreadAttributes as s, unescapeHTML as u };
+export { AstroError as A, ExpectedImage as E, Fragment as F, IncompatibleDescriptorOptions as I, LocalImageUsedWrongly as L, MissingImageDimension as M, UnsupportedImageFormat as U, UnsupportedImageConversion as a, MissingSharp as b, createComponent as c, renderAllHeadContent as d, ExpectedImageOptions as e, InvalidImageService as f, createAstro as g, ImageMissingAlt as h, renderTemplate as i, addAttribute as j, renderSlot as k, renderComponent as l, maybeRenderHead as m, mergeSlots as n, renderSlotToString as r, spreadAttributes as s, unescapeHTML as u };

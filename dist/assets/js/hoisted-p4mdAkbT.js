@@ -1,0 +1,1 @@
+import"./hoisted-lVVcYyyN.js";let e=document.querySelector("#bmrUpdate span"),t=document.querySelector("#userName"),m=localStorage.getItem("getBmr"),l=localStorage.getItem("UserName"),r=document.querySelector("#bmr span");e&&(e.innerHTML=m);r&&(r.innerHTML=m);t&&(t.innerHTML=l.split("@")[0]);
